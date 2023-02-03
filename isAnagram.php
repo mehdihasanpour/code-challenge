@@ -11,12 +11,9 @@ class Solution {
         }
 
         $charMapForS = [];
-        for($i=0; $i<strlen($s); $i++){
-            $charMapForS[$s[$i]] ++;
-        }
-
         $charMapForT = [];
         for($i=0; $i<strlen($s); $i++){
+            $charMapForS[$s[$i]] ++;
             $charMapForT[$t[$i]] ++;
         }
 
