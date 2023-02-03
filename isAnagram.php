@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 class Solution {
 
-    function isAnagram(string $s, string $t)
+    function isAnagram(string $s, string $t): bool
     {
         if(strlen($s) != strlen($t)){
             return false;
