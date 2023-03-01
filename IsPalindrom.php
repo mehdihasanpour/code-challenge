@@ -17,7 +17,7 @@ class Solution
     }
 
     //time complexity => o(n)
-    //space complexity => o(1) ??
+    //space complexity => o(n)
     function isPalindrome2($s)
     {
         $str = preg_replace("/[^A-Za-z0-9 ]/", '', $s);
@@ -32,7 +32,7 @@ class Solution
     }
 
     //time complexity => o(n)
-    //space complexity => o(1) ??
+    //space complexity => o(n)
     function isPalindrome3($s)
     {
         $str = preg_replace("/[^A-Za-z0-9 ]/", '', $s);
