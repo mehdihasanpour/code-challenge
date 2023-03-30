@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func binarySearch2(nums []int, target int) int {
+func binarySearch(nums []int, target int) int {
 	left := 0
 	right := len(nums) - 1
 
@@ -29,5 +29,5 @@ func main() {
 	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
 	target := 5
 
-	fmt.Println(binarySearch2(nums, target))
+	fmt.Println(binarySearch(nums, target))
 }
