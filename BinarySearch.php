@@ -2,33 +2,45 @@
 
 declare(strict_types=1);
 
-function BinarySearch(int $item, array $array)
+function BinarySearch(array $nums, int $target): int
 {
-        $start = 0;
-        $end = array_key_last($array);
-        $i = 0;
-    while ($i<=2) {
-        // var_dump("$start,$end");
+    /**
+     * time complexity => o(n)
+     * space complexity => o(1)
+     */
+    $i = 0;
+    while ($i < count($nums)) {
+        if ($nums[$i] == $target) {
+            return $i;
+        }
         $i++;
-        $count = $end-$start;
-        $mid = (int) ceil($count / 2);
-
-        if ($array[$mid] == $item) {
-            return $mid;
-        }
-
-        if ($array[$mid] > $item) {
-            $start = 0;
-            $end = $mid;
-            var_dump("$start, $end, $mid");
-        } else {
-            $start = $mid + 1;
-            $end = array_key_last($array);
-            var_dump("$start, $end, $mid");
-            // exit;
-        }
-
     }
+    return -1;
 }
 
-var_dump(BinarySearch(19, [0, 1, 2, 3, 4, 7, 8, 19, 20]));
+/**
+ * time complexity => o(log n)
+ * space complexity => o(1)
+ */
+function BinarySearch2(array $nums, int $target): int
+{
+    $left = 0;
+    $right = count($nums) - 1;
+    while ($left <= $right) {
+
+        $mid = (int)floor(($left + $right) / 2);
+        if ($nums[$mid] === $target) {
+            return $mid;
+        }
+        if ($nums[$mid] > $target) {
+            $right = $mid - 1;
+        } else {
+            $left = $mid + 1;
+        }
+    }
+
+    return -1;
+}
+
+var_dump(BinarySearch2([2, 3, 4, 5, 6, 7, 8, 19, 20], 19));
+var_dump(BinarySearch2([2, 3, 4, 5, 6, 7, 8, 19, 20], 5));
