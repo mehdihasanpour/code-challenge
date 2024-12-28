@@ -6,6 +6,7 @@ class Solution
     //space complexity => o(n)
     function isPalindrome($s)
     {
+        //this regular expression finds characters that are not A-Z or a-z or 0-9 and removes them
         $str = preg_replace("/[^A-Za-z0-9 ]/", '', $s);
         $str = str_replace(' ', '', strtolower($str));
         $newStr = '';
@@ -54,7 +55,7 @@ class Solution
 
 $solution = new Solution;
 
-$result1 = $solution->isPalindrome2('carracc'); // false
+//$result1 = $solution->isPalindrome2('carracc'); // false
 $result2 = $solution->isPalindrome2('A man, a plan, a canal: Panama'); // true
 
 var_dump($result1,$result2);
